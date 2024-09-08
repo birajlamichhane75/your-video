@@ -7,5 +7,7 @@ class ApiResponse {
     }
 }
 
+// res.json(ApiResponse()) this res.json implecitely convert class notation into json format
+
 
 export default ApiResponse
