@@ -29,8 +29,6 @@ const registerUser = asyncHandler(async (req, res) => {
             $or: [{ email }, { username }]
         });
 
-        console.log("this is user", existUser);
-
 
         if (existUser) {
             throw new ApiError(408, "User already exist")
@@ -41,6 +39,8 @@ const registerUser = asyncHandler(async (req, res) => {
 
         const avatarLocalPath = req.files?.avatar[0].path;
         // const coverImageLocalPath = req.files?.coverImage[0].path
+        console.log("This is avatar localpath",avatarLocalPath);
+        
         let coverImageLocalPath;
 
         if (req.files && Array.isArray(req.files.coverImage)) {
